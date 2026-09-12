@@ -118,7 +118,7 @@
   //
  if (vramA >vramB) {
      document.getElementById("vram-result").textContent = "Card A wins (higher)";
-  } else if (vramA > vramB) {
+  } else if (vramA < vramB) {
    document.getElementById("vram-result").textContent = "Card B wins (higher)";
   } else {
     document.getElementById("vram-result").textContent = "Tie";
@@ -132,7 +132,7 @@
   if (tdpA < tdpB) {
     document.getElementById("tpd-result").textContent = "Card A wins (lower)";
   } else if  (tdpA > tdpB) {
-    document.getElementById("tdp-result").textContent = "Card B wins (lower)";
+    document.getElementById("tdp-result").textContent = "Card B wins (higher)";
   } else {
     document.getElementById("tdp-result").textContent = "Tie";
   }
