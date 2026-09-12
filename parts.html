@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GPU Spec Check — Beginner Exercise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14181c;
+    --surface: #1b2027;
+    --border: #2c333c;
+    --text: #e8ebee;
+    --text-muted: #8b95a1;
+    --copper: #c9793f;
+    --teal: #4fb3a9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    padding: 48px 20px 80px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--copper); margin: 0 0 10px; }
+  h1 { font-size: 26px; font-weight: 700; margin: 0 0 12px; line-height: 1.3; }
+  header p { color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0; }
+  .box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 22px;
+    margin-top: 24px;
+  }
+  .box h2 { font-size: 15px; margin: 0 0 14px; }
+  .spec { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid var(--border); font-size: 14px; }
+  .spec:first-of-type { border-top: none; }
+  .spec .name { color: var(--text-muted); }
+  .spec .val { font-family: 'JetBrains Mono', monospace; }
+  .winner-line {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--teal);
+    min-height: 18px;
+  }
+  code { font-family: 'JetBrains Mono', monospace; color: var(--copper); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">GPU SPEC CHECK — BEGINNER</p>
+    <h1>Just numbers, comparisons, and if/else.</h1>
+    <p>Two GPUs, four stats. Your only job is to write <code>if</code> / <code>else if</code> / <code>else</code> statements that figure out which card wins each stat. Open the &lt;script&gt; tag at the bottom to see the code.</p>
+  </header>
+
+  <div class="box">
+    <h2>Card A — RX 6900 XT</h2>
+    <div class="spec"><span class="name">Price</span><span class="val">$430</span></div>
+    <div class="spec"><span class="name">VRAM</span><span class="val">16 GB</span></div>
+    <div class="spec"><span class="name">TDP</span><span class="val">300 W</span></div>
+    <div class="spec"><span class="name">Score</span><span class="val">19,000</span></div>
+  </div>
+
+  <div class="box">
+    <h2>Card B — RTX 4070</h2>
+    <div class="spec"><span class="name">Price</span><span class="val">$550</span></div>
+    <div class="spec"><span class="name">VRAM</span><span class="val">12 GB</span></div>
+    <div class="spec"><span class="name">TDP</span><span class="val">200 W</span></div>
+    <div class="spec"><span class="name">Score</span><span class="val">17,000</span></div>
+  </div>
+
+  <div class="box">
+    <h2>Results (filled in by your code)</h2>
+    <div class="winner-line">Price: <span id="price-result">—</span></div>
+    <div class="winner-line">VRAM: <span id="vram-result">—</span></div>
+    <div class="winner-line">TDP: <span id="tdp-result">—</span></div>
+    <div class="winner-line">Score: <span id="score-result">—</span></div>
+  </div>
+</div>
+
+<script>
+  // Just plain variables — no arrays, no functions. Numbers only.
+  const priceA = 430;
+  const priceB = 550;
+
+  const vramA = 16;
+  const vramB = 12;
+
+  const tdpA = 300;
+  const tdpB = 200;
+
+  const scoreA = 19000;
+  const scoreB = 17000;
+
+  // ── DONE FOR YOU — read this one carefully, you'll copy this pattern ──
+  // Price: LOWER is better (cheaper wins).
+  if (priceA < priceB) {
+    document.getElementById("price-result").textContent = "Card A wins (cheaper)";
+  } else if (priceB < priceA) {
+    document.getElementById("price-result").textContent = "Card B wins (cheaper)";
+  } else {
+    document.getElementById("price-result").textContent = "Tie";
+  }
+
+
+  // ── TODO 1 — VRAM: HIGHER is better (more memory wins). ──
+  // Copy the shape of the example above, but flip the comparison
+  // direction and change which element you're writing to.
+  //
+ if (vramA < vramB) {
+     document.getElementById("vram-result").textContent = "Card A wins (higher)";
+  } else if (vramB < vramB) {
+   document.getElementById("vram-result").textContent = "Card B wins (higher)";
+  } else {
+    document.getElementById("vram-result").textContent = "Tie";
+  }
+
+
+
+  // ── TODO 2 — TDP: LOWER is better (less power draw wins). ──
+  // Same shape as the price example — try writing this one from
+  // scratch without peeking.
+  if (tdpA < tdpB) {
+    document.getElementById("tpd-result").textContent = "Card A wins (lower)";
+  } else if  (tdpA < tdpB) {
+    document.getElementById("tdp-result").textContent = "Card B wins (lower)";
+  } else {
+    document.getElementById("tdo-result").textContent = "Tie";
+  }
+
+
+
+  // ── TODO 3 — Score: HIGHER is better. ──
+  // Same shape as the VRAM one.
+if (scoreA < scoreB) {
+    document.getElementById("score-result").textContent = " Card A wins (higher)";
+} else if (scoreA < scoreB) {
+    document.getElementById("score-result").textContent = " Card B wins (higher)";
+} else {
+    document.getElementById("score-result").textContent = " Tie";
+}
+
+</script>
+
+</body>
+</html>
