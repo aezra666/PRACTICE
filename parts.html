@@ -118,7 +118,7 @@
   //
  if (vramA < vramB) {
      document.getElementById("vram-result").textContent = "Card A wins (higher)";
-  } else if (vramB < vramB) {
+  } else if (vramA < vramB) {
    document.getElementById("vram-result").textContent = "Card B wins (higher)";
   } else {
     document.getElementById("vram-result").textContent = "Tie";
@@ -129,21 +129,21 @@
   // ── TODO 2 — TDP: LOWER is better (less power draw wins). ──
   // Same shape as the price example — try writing this one from
   // scratch without peeking.
-  if (tdpA < tdpB) {
+  if (tdpA > tdpB) {
     document.getElementById("tpd-result").textContent = "Card A wins (lower)";
-  } else if  (tdpA < tdpB) {
+  } else if  (tdpA > tdpB) {
     document.getElementById("tdp-result").textContent = "Card B wins (lower)";
   } else {
-    document.getElementById("tdo-result").textContent = "Tie";
+    document.getElementById("tdp-result").textContent = "Tie";
   }
 
 
 
   // ── TODO 3 — Score: HIGHER is better. ──
   // Same shape as the VRAM one.
-if (scoreA < scoreB) {
+if (scoreA > scoreB) {
     document.getElementById("score-result").textContent = " Card A wins (higher)";
-} else if (scoreA < scoreB) {
+} else if (scoreA > scoreB) {
     document.getElementById("score-result").textContent = " Card B wins (higher)";
 } else {
     document.getElementById("score-result").textContent = " Tie";
