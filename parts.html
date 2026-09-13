@@ -105,7 +105,7 @@
   // Price: LOWER is better (cheaper wins).
   if (priceA < priceB) {
     document.getElementById("price-result").textContent = "Card A wins (cheaper)";
-  } else if (priceB >priceA) {
+  } else if (priceB < priceA) {
     document.getElementById("price-result").textContent = "Card B wins (cheaper)";
   } else {
     document.getElementById("price-result").textContent = "Tie";
@@ -131,7 +131,7 @@
   // scratch without peeking.
   if (tdpA < tdpB) {
     document.getElementById("tdp-result").textContent = "Card A wins (lower)";
-  } else if  (tdpA > tdpB) {
+  } else if  (tdpA < tdpB) {
     document.getElementById("tdp-result").textContent = "Card B wins (lower)";
   } else {
     document.getElementById("tdp-result").textContent = "Tie";
@@ -143,7 +143,7 @@
   // Same shape as the VRAM one.
 if (scoreA > scoreB) {
     document.getElementById("score-result").textContent = " Card A wins (higher)";
-} else if (scoreA > scoreB) {
+} else if (scoreB < scoreA) {
     document.getElementById("score-result").textContent = " Card B wins (higher)";
 } else {
     document.getElementById("score-result").textContent = " Tie";
