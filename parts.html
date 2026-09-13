@@ -105,7 +105,7 @@
   // Price: LOWER is better (cheaper wins).
   if (priceA < priceB) {
     document.getElementById("price-result").textContent = "Card A wins (cheaper)";
-  } else if (priceB < priceA) {
+  } else if (priceB >priceA) {
     document.getElementById("price-result").textContent = "Card B wins (cheaper)";
   } else {
     document.getElementById("price-result").textContent = "Tie";
@@ -130,9 +130,9 @@
   // Same shape as the price example — try writing this one from
   // scratch without peeking.
   if (tdpA < tdpB) {
-    document.getElementById("tpd-result").textContent = "Card A wins (lower)";
+    document.getElementById("tdp-result").textContent = "Card A wins (lower)";
   } else if  (tdpA > tdpB) {
-    document.getElementById("tdp-result").textContent = "Card B wins (higher)";
+    document.getElementById("tdp-result").textContent = "Card B wins (lower)";
   } else {
     document.getElementById("tdp-result").textContent = "Tie";
   }
